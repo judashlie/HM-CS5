@@ -1,0 +1,25 @@
+# picobot empty room
+
+# in s0, if nothing E: go E
+0 *x** -> E 0
+
+# in s0, if nothing N and something E: go N
+0 xE** -> N 0
+
+# in s0, if something N and E: change to s1
+0 NE** -> X 1
+
+# in s1, if nothing S: go S
+1 ***x -> S 1
+
+# in s1, if nothing W and something S: go W, change to s2
+1 **xS -> W 2
+
+# in s2, if nothing N: go N
+2 x*** -> N 2
+
+# in s2, if something N: go W, change to s1
+2 N*** -> W 1
+
+# in s1, if nothing N and something W & S: change to s0
+1 x*WS -> X 0
